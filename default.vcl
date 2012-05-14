@@ -11,7 +11,7 @@ sub vcl_recv {
     if (req.restarts == 0) {
         if (req.request == "GET" || req.request == "POST") {
             C{
-                vcl_geoip_set_header(sp);
+                vcl_geoip_set_country_header(sp);
             }C
         }
     }
@@ -24,4 +24,3 @@ sub vcl_fetch {
     #set beresp.http.X-Geo-IP = req.http.X-Geo-IP;
 
 }
-
