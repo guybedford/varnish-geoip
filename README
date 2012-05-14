@@ -1,6 +1,18 @@
 Varnish Geo-IP VCL
 ===========================
 
+Update by Guy Bedford 14/05/2012
+
+Reduction to GeoIP country only with direct inclusion of ready-to-use VCL
+
+USAGE::
+-install GeoIP country (http://www.maxmind.com/app/c)
+-move geoip.vcl to /etc/varnish
+-edit geoip.vcl to set the correct path of the country database (wherever you download it to)
+-include in your default.vcl as in the example included
+-start varnish with the special cc options as demoed in start-varnish.sh (the important part being after the -p paramater)
+
+
 Last updated: 1/12/2011
 	Cosimo Streppone <cosimo@opera.com>
 	Opera Software ASA
